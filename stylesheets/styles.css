@@ -15,3 +15,18 @@
 	padding: 2px;
 	text-align: center;
 }
+
+.button {
+	float: left;
+	width: 10%;
+	max-height: 80px;
+	min-height: 40PX;
+	cursor: pointer;
+	
+	border: 1px solid #FF5555;
+}
+
+.number {
+	float: left;
+	width: 75%;
+}
