@@ -2,3 +2,16 @@
 	float: left;
 	width: 50%;
 }
+
+.p1bg {
+	background-color: #e6cccc;
+}
+
+.p2bg {
+	background-color: #ccccFf;
+}
+
+.label {
+	padding: 2px;
+	text-align: center;
+}
