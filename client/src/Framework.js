@@ -10,6 +10,8 @@ Laya.class(function(){
     this.run = function(){
         Config.showCanvasMark = true;
         Laya.init(960, 640, laya.webgl.WebGL);
+        Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
+        Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
     }
 
     this.addUI = function(){
