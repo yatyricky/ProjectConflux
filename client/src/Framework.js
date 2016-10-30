@@ -8,12 +8,15 @@
 
 Laya.class(function(){
     this.run = function(){
+        Config.showCanvasMark = true;
         Laya.init(960, 640, laya.webgl.WebGL);
     }
 
     this.addUI = function(){
-        var tempUI = new ui.testUI();
-        Laya.stage.addChild(tempUI);
+        var startUI = new ui.startUI();
+        startUI.version.dataSource = {text: version};
+        Laya.stage.addChild(startUI);
+        Logger(debugLevel.debug, "test log");
     }
 }, "Framework", null);
 
