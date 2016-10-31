@@ -19,11 +19,10 @@ Laya.class(function(){
         startUI.version.dataSource = {text: version};
         Laya.stage.addChild(startUI);
         Logger(debugLevel.debug, "test log");
-    }
 
-    this.addCommon  = function(){
-        var card = new ui.cardUI();
-        card.dataSource = {x:0, y:0, scaleX:0.3, scaleY:0.3};
+        var card = new game.card();
+        card.loadConfig({name: "laya", category:"spell"});
+        card.dataSource = {x:0, y:0, scaleX:0.5, scaleY:0.5};
         Laya.stage.addChild(card);
     }
 }, "Framework", null);
@@ -31,8 +30,8 @@ Laya.class(function(){
 var framework = new Framework();
 framework.run();
 
-Laya.loader.load("res/atlas/comp.json", laya.utils.Handler.create(framework, framework.addUI), null, laya.net.Loader.ATLAS);
-Laya.loader.load("res/atlas/common.json", laya.utils.Handler.create(framework, framework.addCommon), null, laya.net.Loader.ATLAS);
+Laya.loader.load(["res/atlas/comp.json", "res/atlas/common.json", "res/atlas/res.json"], laya.utils.Handler.create(framework, framework.addUI), null, laya.net.Loader.ATLAS);
+
 
 
 
