@@ -65,6 +65,3 @@ $RECYCLE.BIN/
 
 # Windows opened files
 ~$*
-
-# Project Specific
-res/cards.json
