@@ -65,3 +65,7 @@ $RECYCLE.BIN/
 
 # Windows opened files
 ~$*
+
+# custom
+client/bin/res
+client/src/ui
