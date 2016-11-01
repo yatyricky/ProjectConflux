@@ -70,3 +70,4 @@ $RECYCLE.BIN/
 client/bin/res
 client/src/ui
 client/laya/styles.xml
+*.fw.png
