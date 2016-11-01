@@ -38,7 +38,7 @@ var card = function(){
     }
 };
 
-Laya.class(card, "game.card", ui.cardUI);
+Laya.class(card, "game.card", ui.share.cardUI);
 
 
 
