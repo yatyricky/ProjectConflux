@@ -3,7 +3,7 @@
     "type":"View",
     "selectedBox":1,
     "selecteID":5,
-    "props":{"width":960,"sceneColor":"#006666","height":640},
+    "props":{"width":1280,"sceneColor":"#006666","height":720},
     "nodeParent":-1,
     "label":"View",
     "isOpen":true,
@@ -22,7 +22,7 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":200,"x":362,"width":199,"var":"startBtn","skin":"comp/button.png","labelSize":40,"label":"start","height":109},
+            "props":{"y":202,"x":543,"width":199,"var":"startBtn","skin":"comp/button.png","labelSize":40,"label":"start","height":109},
             "nodeParent":1,
             "label":"Button(startBtn)",
             "isDirectory":false,
@@ -42,7 +42,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":70,"x":372,"width":172,"var":"gameName","text":"Conflux","height":48,"fontSize":40,"color":"#fbfbfb","align":"center"},
+            "props":{"y":77,"x":560,"width":172,"var":"gameName","text":"Conflux","height":48,"fontSize":40,"color":"#fbfbfb","align":"center"},
             "nodeParent":1,
             "label":"Label(gameName)",
             "isDirectory":false,
@@ -62,7 +62,7 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":369,"x":365,"width":200,"var":"editBtn","skin":"comp/button.png","labelSize":40,"label":"edit","height":100},
+            "props":{"y":406,"x":544,"width":200,"var":"editBtn","skin":"comp/button.png","labelSize":40,"label":"edit","height":100},
             "nodeParent":1,
             "label":"Button(editBtn)",
             "isDirectory":false,
@@ -82,7 +82,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":604,"x":14,"width":84,"var":"version","text":"v0.0.1","height":26,"fontSize":20,"color":"#ffffff","align":"center"},
+            "props":{"y":686,"x":14,"width":84,"var":"version","text":"v0.0.1","height":26,"fontSize":20,"color":"#ffffff","align":"center"},
             "nodeParent":1,
             "label":"Label(version)",
             "isDirectory":false,
