@@ -21,9 +21,9 @@ Laya.class(function(){
     }
 
     this.addUI = function(){
-        var startUI = new ui.start.startUI();
-        startUI.version.dataSource = {text: version};
-        Laya.stage.addChild(startUI);
+        var startScene = new start.StartScene();
+        startScene.version.dataSource = {text: version};
+        Laya.stage.addChild(startScene);
     }
 }, "Framework", null);
 
