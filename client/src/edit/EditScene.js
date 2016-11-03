@@ -6,10 +6,14 @@
  * purpose: 卡组编辑场景管理类，封装编辑界面 UI 以及相关方法
  */
 
-var editScene = function(){
-    
+var EditScene = function(_super){
+    function EditScene(){
+        EditScene.__super.call(this);
+    };
+    Laya.class(EditScene, "edit.EditScene", _super);
 
-    editScene.super(this);
-};
+    var __proto = EditScene.prototype;
 
-Laya.class(editScene, "edit.EditScene", ui.edit.editUI);
+    return EditScene;
+}(ui.edit.editUI);
+
