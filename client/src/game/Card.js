@@ -7,12 +7,16 @@
  */
 
 
-var card = function(){
-    card.super(this);
+var Card = function(_super){
+    function Card(){
+        Card.__super.call(this);
+    }
 
-    // this.loadConfig = function() 这样写才能被外部调用。
-    // function loadConfig() 这样写不能被外部调用，因为这种写法等价于 var loadConfig = function()，是个临时变量。
-    this.loadConfig = function(config){
+    Laya.class(Card, "game.card", _super);
+
+    var __proto = Card.prototype;
+
+    __proto.loadConfig = function(config){
         if (config.bg){
             this.bg.skin = config.bg;
         }
@@ -36,9 +40,9 @@ var card = function(){
             }
         }
     }
-};
+}(ui.share.cardUI);
 
-Laya.class(card, "game.card", ui.share.cardUI);
+
 
 
 
