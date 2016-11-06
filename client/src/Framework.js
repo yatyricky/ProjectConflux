@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Framework.js
  * 
@@ -7,29 +9,33 @@
  */
 
 // 用于保存全局对象，如玩家信息、牌库配置等。
-Conflux = {};
+var Conflux = Conflux || {};
 
-Laya.class(function(){
-    this.run = function(){
+var Framework = function(){
+    this.init = function(){
         Config.showCanvasMark = true;
         Laya.init(1280, 720, laya.webgl.WebGL);
         Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
         Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
 
-        Laya.loader.load(["res/atlas/comp.json", "res/atlas/common.json", "res/atlas/res.json"]
-            , laya.utils.Handler.create(this, this.addUI), null, laya.net.Loader.ATLAS);
-    }
+        var sceneManager = new core.SceneManager();
+        Conflux.sceneManager = sceneManager;
+        sceneManager.regScene("start", start.StartScene, Conflux.RES["StartScene"]);
+        sceneManager.regScene("edit", edit.EditScene, Conflux.RES["EditScene"]);
+    };
 
-    this.addUI = function(){
-        var startScene = new start.StartScene();
-        startScene.version.dataSource = {text: version};
-        Laya.stage.addChild(startScene);
-    }
-}, "Framework", null);
+    this.run = function(){
+        var sceneManager = Conflux.sceneManager;
+        sceneManager.enterScene("start");
+    };
+};
+
+Laya.class(Framework, "Framework", null);
 
 var framework = new Framework();
 Conflux.framework = framework;
 
+framework.init();
 framework.run();
 
 
