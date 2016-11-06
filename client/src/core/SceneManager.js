@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * SceneManager.js
  * 
@@ -6,25 +8,19 @@
  * purpose: 管理场景切换和场景内事件
  */
 
-var sceneManager = function(){
-    var EventDispatcher = laya.events.EventDispatcher;
+var SceneManager = function(){
+    // 当前场景的事件分发器引用
+    this.eventDispatcher = null;
 
-    var __proto = sceneManager.prototype;
+    // 当前场景的对象
+    this._curScene = null;
 
-    function SceneManager(){
-        // 当前场景的事件分发器引用
-        __proto.eventDispatcher = null;
-
-        // 当前场景的对象
-        __proto.curScene = null;
-
-        __proto._sceneMap = {};
-    };
+    this._sceneMap = {};
 
     // 注册场景类
-    __proto.regScene = function(name, cls){
+    this.regScene = function(name, cls, res){
         if (this._sceneMap[name] === undefined){
-            this._sceneMap[name] = cls;
+            this._sceneMap[name] = {instructor: cls, resource: res};
         }
         else{
             Logger(debugLevel.warn, "[SceneManager] scene " + name + " has already registered!");
@@ -32,7 +28,7 @@ var sceneManager = function(){
     };
 
     // 注销场景类
-    __proto.unregScene = function(name, cls){
+    this.unregScene = function(name){
         if (this._sceneMap[name] !== undefined){
             this._sceneMap[name] = undefined;
         }
@@ -42,7 +38,7 @@ var sceneManager = function(){
     };
 
     // 切换场景
-    __proto.enterScene = function(name){
+    this.enterScene = function(name){
         if (this._sceneMap[name] === undefined){
             Logger(debugLevel.error, "[SceneManager] scene " + name + " is not registered!");
             return false;
@@ -54,15 +50,25 @@ var sceneManager = function(){
                 this._curScene = null;
             }
 
-            var newScene = this._sceneMap[name]();
-            newScene.onLoad();
-            Laya.stage.addChild(newScene);
-            this._curScene = newScene();
+            var onLoad = function(sceneName){
+                var newScene = new this._sceneMap[sceneName].instructor();
+                newScene.onLoad();
+                Laya.stage.addChild(newScene);
+                this._curScene = newScene;
+            };
+            
+            if (this._sceneMap[name].resource){
+                Laya.loader.load(this._sceneMap[name].resource, laya.utils.Handler.create(this, onLoad, [name])
+                , null, laya.net.Loader.ATLAS);
+            }
+            else {
+                onLoad();
+            }
         }
     };
 };
 
-Laya.class(sceneManager, "SceneManager", null);
+Laya.class(SceneManager, "core.SceneManager", null);
 
 
 

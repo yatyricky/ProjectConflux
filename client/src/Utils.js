@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Utils.js
  * 
@@ -5,22 +7,15 @@
  */
 
 // 游戏版本号
-var version = "v0.0.0.1";
+var VERSION = "v0.0.0.1";
 
 // 游戏构建版本号，与版本号对应，对应规则为 aa.bb.cc.dd -> aabbccdd。例如：v1.2.3.4 -> 10203040
-var versionCode = 1;
+var VERSION_CODE = 1;
 
-Utils = {
-    getVersionName : function(){
-        return version;
-    },
-
-    getVersionCode : function(){
-        return versionCode;
-    }
+var Utils = {
 };
 
-debugLevel = {
+var debugLevel = {
     debug : 1,
     info : 2,
     warn : 3,
@@ -45,7 +40,7 @@ var printLog = function(msg){
  *      level，日志等级，取 debugLevel 中的值。
  *      msg，需要打印的日志内容
  */
-Logger = function(level, msg){
+var Logger = function(level, msg){
     if (typeof(level) != "number"){
         printLog("[error] Logger level error for " + level);
         return;
