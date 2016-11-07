@@ -64,4 +64,4 @@ while (mess["B" + str(rowCount)].value):
 	rowCount += 1
 
 with codecs.open("../client/laya/assets/res/cards.json", 'w', encoding = 'utf8') as file:
-    file.write(json.dumps(data))
+    file.write(json.dumps(data, ensure_ascii=False))
