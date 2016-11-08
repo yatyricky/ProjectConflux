@@ -15,52 +15,54 @@ while (mess[chr(colCount) + "1"].value):
 	colHeader[mess[chr(colCount) + "1"].value] = chr(colCount)
 	colCount += 1
 
-data = []
+data = {}
 
 # print(mess["B" + str(138)].value)
 
 rowCount = 2
 while (mess["B" + str(rowCount)].value):
-	obj = {}
+	if (mess[colHeader['package'] + str(rowCount)].value == "Aether"):
+		obj = {}
 
-	obj['id'] = mess[colHeader['id'] + str(rowCount)].value
-	obj['qlvl'] = mess[colHeader['qlvl'] + str(rowCount)].value
-	obj['name'] = mess[colHeader['name'] + str(rowCount)].value
-	obj['color'] = mess[colHeader['color'] + str(rowCount)].value
-	obj['type'] = mess[colHeader['type'] + str(rowCount)].value
-	obj['cost'] = mess[colHeader['cost'] + str(rowCount)].value
-	obj['trigger'] = mess[colHeader['trigger'] + str(rowCount)].value
-	obj['package'] = mess[colHeader['package'] + str(rowCount)].value
+		# name
+		obj['name'] = mess[colHeader['name'] + str(rowCount)].value
 
-	if (mess[colHeader['flavorText'] + str(rowCount)].value):
-		obj['flavorText'] = mess[colHeader['flavorText'] + str(rowCount)].value
-	else:
-		obj['flavorText'] = ""
+		# type
+		types = []
+		types.append(mess[colHeader['type'] + str(rowCount)].value)
+		if (mess[colHeader['subType'] + str(rowCount)].value):
+			types.extend(mess[colHeader['subType'] + str(rowCount)].value.split(","))
+		obj['type'] = types
 
-	if (mess[colHeader['power'] + str(rowCount)].value):
-		obj['power'] = mess[colHeader['power'] + str(rowCount)].value
-	else:
-		obj['power'] = 0
+		# cost
+		costs = {}
+		costs['red'] = 0
+		costs['green'] = 0
+		costs['blue'] = 0
+		costs['white'] = 0
+		costs['mana'] = mess[colHeader['cost'] + str(rowCount)].value
+		obj['cost'] = costs
 
-	if (mess[colHeader['defense'] + str(rowCount)].value):
-		obj['defense'] = mess[colHeader['defense'] + str(rowCount)].value
-	else:
-		obj['defense'] = 0
+		# color
+		obj['color'] = mess[colHeader['color'] + str(rowCount)].value
 
-	if (mess[colHeader['subType'] + str(rowCount)].value):
-		obj['subType'] = mess[colHeader['subType'] + str(rowCount)].value.split(",")
-	else:
-		obj['subType'] = []
+		# power
+		if (mess[colHeader['power'] + str(rowCount)].value):
+			obj['power'] = mess[colHeader['power'] + str(rowCount)].value
+		else:
+			obj['power'] = 0
 
-	abilities = []
-	if (mess[colHeader['description'] + str(rowCount)].value):
-		for ability in mess[colHeader['description'] + str(rowCount)].value.split("*"):
-			token = ability.strip()
-			if (len(token) != 0):
-				abilities.append(token)
-	obj['description'] = abilities
+		# defense
+		if (mess[colHeader['defense'] + str(rowCount)].value):
+			obj['defense'] = mess[colHeader['defense'] + str(rowCount)].value
+		else:
+			obj['defense'] = 0
 
-	data.append(obj)
+		# skill
+		obj['skill'] = []
+
+		data[mess[colHeader['id'] + str(rowCount)].value] = obj
+
 	rowCount += 1
 
 with codecs.open("../client/laya/assets/res/cards.json", 'w', encoding = 'utf8') as file:
