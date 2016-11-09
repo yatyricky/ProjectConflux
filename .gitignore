@@ -72,3 +72,4 @@ client/src/ui
 client/laya/styles.xml
 *.fw.png
 client/laya/assets/res/cards.json
+client/laya/assets/res/abilities.json
