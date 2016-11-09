@@ -16,17 +16,18 @@
         this.cardsLoaded = false;
 
         this.init = function(){
-            // Laya.loader.load(Conflux.CONFIG.cards, laya.utils.Handler.create(this, this.onCardsLoaded)
-            //     , null, laya.net.Loader.JSON, 1, false);
+            Laya.loader.load(Conflux.CONFIG.cards, laya.utils.Handler.create(this, this.onCardsLoaded)
+                , null, laya.net.Loader.JSON, 1, false);
         };
 
         this.onCardsLoaded = function(obj){
             this.cards = obj;
             for (var item in this.cards){
-                this.cards.item.id = item;
+                dump(item);
+                this.cards[item].id = item;
             }
-            dump(obj);
             this.cardsLoaded = true;
+            dump(this.cards);
         };
     };
 
