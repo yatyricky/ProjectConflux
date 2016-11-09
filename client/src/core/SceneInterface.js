@@ -8,25 +8,27 @@
  * purpose: 场景接口，定义场景需要具有的接口
  */
 
-var SceneInterface = function(){
-    function SceneInterface(){
+(function(){
+    var SceneInterface = function(){
+        function SceneInterface(){
 
-    };
+        };
 
-    var __proto = SceneInterface.prototype;
+        var __proto = SceneInterface.prototype;
 
-    // 场景进入时由场景管理器调用
-    __proto.onLoad = function(){
+        // 场景进入时由场景管理器调用
+        __proto.onLoad = function(){
 
-    };
+        };
 
-    // 场景退出时由场景管理器调用
-    __proto.onUnload = function(){
+        // 场景退出时由场景管理器调用
+        __proto.onUnload = function(){
 
-    };
-    
-    return SceneInterface;
-}();
+        };
+        
+        return SceneInterface;
+    }();
 
-Laya.interface("core.SceneInterface", SceneInterface);
+    Laya.interface("core.SceneInterface", SceneInterface);
+})();
 

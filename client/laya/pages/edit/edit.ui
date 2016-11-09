@@ -2,8 +2,8 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":8,
-    "props":{"width":1280,"sceneColor":"#4f4d4d","height":720},
+    "selecteID":55,
+    "props":{"width":1280,"sceneColor":"#4f4d4d","height":720,"hScrollBarSkin":"comp/hscroll.png"},
     "nodeParent":-1,
     "label":"View",
     "isOpen":true,
@@ -865,6 +865,48 @@
             "compId":47,
             "child":[
                 ]
+        },
+        {
+            "x":15,
+            "type":"Panel",
+            "props":{"y":22,"x":123,"width":936,"var":"card_list","height":319,"hScrollBarSkin":"comp/hscroll.png"},
+            "nodeParent":1,
+            "label":"Panel(card_list)",
+            "isOpen":true,
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":221,"x":179},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":50,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Panel",
+            "props":{"y":380,"x":123,"width":936,"var":"deck_list","height":319,"hScrollBarSkin":"comp/hscroll.png"},
+            "nodeParent":1,
+            "label":"Panel(deck_list)",
+            "isOpen":true,
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":221,"x":179},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":55,
+            "child":[
+                ]
         }],
     "animations":[
         {
@@ -875,5 +917,5 @@
             "frameRate":24,
             "action":0
         }],
-    "$LOCKED":true
+    "$LOCKED":false
 }

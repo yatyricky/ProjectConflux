@@ -8,20 +8,25 @@
  * purpose: 卡组编辑场景管理类，封装编辑界面 UI 以及相关方法
  */
 
-var EditScene = function(){
-    EditScene.__super.call(this);
-    
-    this.onLoad = function(){
-        var closeBtnClick = function(){
-            Conflux.sceneManager.enterScene("start");
+(function(){
+    var EditScene = function(){
+        EditScene.__super.call(this);
+        
+        this.onLoad = function(){
+            var closeBtnClick = function(){
+                Conflux.sceneManager.enterScene("start");
+            };
+            this.closeBtn.clickHandler = laya.utils.Handler.create(this, closeBtnClick, null, false);
+
+            
         };
-        this.closeBtn.clickHandler = laya.utils.Handler.create(this, closeBtnClick, null, false);
+
+        this.onUnload = function(){
+
+        };
     };
 
-    this.onUnload = function(){
+    Laya.class(EditScene, "edit.EditScene", ui.edit.editUI);
+    Laya.imps(EditScene, {"core.SceneInterface": true});
+})();
 
-    };
-};
-
-Laya.class(EditScene, "edit.EditScene", ui.edit.editUI);
-Laya.imps(EditScene, {"core.SceneInterface": true});
