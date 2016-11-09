@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":14,
+    "selecteID":12,
     "props":{"sceneWidth":504,"sceneHeight":704,"sceneColor":"#000000"},
     "nodeParent":-1,
     "label":"View",
@@ -64,7 +64,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":23.5,"x":11,"var":"picture","skin":"res/1000001.png","scaleY":0.5,"scaleX":0.5},
+            "props":{"y":23.5,"x":11,"var":"picture","scaleY":0.5,"scaleX":0.5},
             "nodeParent":1,
             "label":"Image(picture)",
             "isDirectory":false,
@@ -85,13 +85,13 @@
         {
             "x":15,
             "type":"HBox",
-            "props":{"y":6,"x":179,"width":0,"var":"costBox","space":2,"scaleY":0.5,"scaleX":0.5,"height":0,"align":"middle"},
+            "props":{"y":6,"x":213,"var":"costBox","space":2,"scaleY":0.5,"scaleX":0.5,"align":"middle"},
             "nodeParent":1,
             "label":"HBox(costBox)",
             "isOpen":true,
-            "isDirectory":true,
+            "isDirectory":false,
             "isAniNode":true,
-            "hasChild":true,
+            "hasChild":false,
             "frames":[
                 {
                     "type":1,
@@ -101,96 +101,13 @@
                 }],
             "compId":7,
             "child":[
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"skin":"common/color_blue.png"},
-                    "nodeParent":7,
-                    "label":"Image",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":8,
-                    "child":[
-                        ],
-                    "$LOCKED":false
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"skin":"common/color_blue.png"},
-                    "nodeParent":7,
-                    "label":"Image",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"skin":"common/color_blue.png"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":9,
-                    "child":[
-                        ],
-                    "$LOCKED":false
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"skin":"common/color_blue.png"},
-                    "nodeParent":7,
-                    "label":"Image",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"skin":"common/color_blue.png"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":10,
-                    "child":[
-                        ],
-                    "$LOCKED":false
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"skin":"common/color_blue.png"},
-                    "nodeParent":7,
-                    "label":"Image",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"skin":"common/color_blue.png"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":11,
-                    "child":[
-                        ],
-                    "$LOCKED":false
-                }],
+                ],
             "$LOCKED":false
         },
         {
             "x":15,
             "type":"Label",
-            "props":{"y":188,"x":78,"var":"name","text":"这是卡牌名字","fontSize":15,"color":"#000000","bold":true},
+            "props":{"y":188,"x":122,"var":"name","text":"这是卡牌名字","overflow":"hidden","fontSize":15,"color":"#000000","bold":true,"anchorX":0.5,"align":"center"},
             "nodeParent":1,
             "label":"Label(name)",
             "isDirectory":false,
@@ -211,7 +128,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":215,"x":26,"wordWrap":true,"width":200,"var":"description","text":"* 嘲讽：攻击中的生物必须指定任一嘲讽者作为目标 * 防御者：进攻时，力量结算-1，防御时，力量结算+2","stroke":1,"overflow":"scroll","leading":3,"height":112,"fontSize":15,"color":"#000000","centerX":0,"bold":false},
+            "props":{"y":215,"x":26,"wordWrap":true,"width":200,"var":"description","stroke":1,"overflow":"scroll","leading":3,"height":112,"fontSize":15,"color":"#000000","centerX":0,"bold":false},
             "nodeParent":1,
             "label":"Label(description)",
             "isDirectory":false,
@@ -260,5 +177,5 @@
             "frameRate":24,
             "action":0
         }],
-    "$LOCKED":true
+    "$LOCKED":false
 }
