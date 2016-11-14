@@ -19,6 +19,8 @@
             Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
             Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
 
+            Conflux.eventDispatcher = new Laya.EventDispatcher();
+
             var sceneManager = new core.SceneManager();
             Conflux.sceneManager = sceneManager;
             sceneManager.regScene("start", start.StartScene, Conflux.RES["StartScene"]);

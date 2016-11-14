@@ -23,12 +23,14 @@
         this.onCardsLoaded = function(obj){
             this.cards = obj;
             for (var item in this.cards){
-                dump(item);
                 this.cards[item].id = item;
             }
             this.cardsLoaded = true;
-            dump(this.cards);
         };
+
+        this.getCardsConfig = function(){
+            return this.cards;
+        }
     };
 
     Laya.class(GameData, "core.GameData", null);

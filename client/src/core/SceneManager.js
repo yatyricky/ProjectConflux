@@ -10,9 +10,6 @@
 
 (function(){
     var SceneManager = function(){
-        // 当前场景的事件分发器引用
-        this.eventDispatcher = null;
-
         // 当前场景的对象
         this._curScene = null;
 
