@@ -15,7 +15,8 @@
     Conflux.RES["StartScene"] = [
         "res/atlas/comp.json", 
         "res/atlas/common.json", 
-        "res/atlas/res.json"
+        "res/atlas/res.json",
+        "res/atlas/main_screen.json"
     ];
 
     Conflux.RES["EditScene"] = [

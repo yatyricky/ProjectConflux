@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":57,
+    "selecteID":4,
     "props":{"width":1280,"sceneColor":"#4f4d4d","height":720,"hScrollBarSkin":"comp/hscroll.png"},
     "nodeParent":-1,
     "label":"View",
@@ -38,7 +38,7 @@
             "compId":3,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
@@ -59,7 +59,7 @@
             "compId":4,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
@@ -80,7 +80,7 @@
             "compId":6,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
@@ -101,7 +101,7 @@
             "compId":7,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,

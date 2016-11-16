@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":5,
+    "selecteID":13,
     "props":{"width":1280,"sceneColor":"#006666","height":720},
     "nodeParent":-1,
     "label":"View",
@@ -21,8 +21,91 @@
     "child":[
         {
             "x":15,
+            "type":"Image",
+            "props":{"y":0,"x":0,"skin":"main_screen/background.png","name":"background"},
+            "nodeParent":1,
+            "label":"Image(background)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":365,"x":162,"skin":"main_screen/background.png"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":13,
+            "child":[
+                ],
+            "$LOCKED":false
+        },
+        {
+            "x":15,
+            "type":"Label",
+            "props":{"y":686.0000000000002,"x":13.999999999999973,"width":84,"var":"version","text":"v0.0.1","height":26,"fontSize":20,"color":"#ffffff","align":"center"},
+            "nodeParent":1,
+            "label":"Label(version)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":598,"x":86,"text":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":5,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":-220,"x":-196,"skin":"main_screen/magical_circle.png","name":"magic circle LT"},
+            "nodeParent":1,
+            "label":"Image(magic circle LT)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":101,"x":115,"skin":"main_screen/magical_circle.png"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":14,
+            "child":[
+                ],
+            "$LOCKED":true
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":391,"x":850,"skin":"main_screen/magical_circle.png","name":"magic circle BR"},
+            "nodeParent":1,
+            "label":"Image(magic circle BR)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":512,"x":986,"skin":"main_screen/magical_circle.png"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":15,
+            "child":[
+                ],
+            "$LOCKED":true
+        },
+        {
+            "x":15,
             "type":"Button",
-            "props":{"y":202,"x":543,"width":199,"var":"startBtn","skin":"comp/button.png","labelSize":40,"label":"start","height":109},
+            "props":{"y":222,"x":690,"var":"startBtn","stateNum":"3","skin":"main_screen/btn_start.png","labelSize":40},
             "nodeParent":1,
             "label":"Button(startBtn)",
             "isDirectory":false,
@@ -41,28 +124,8 @@
         },
         {
             "x":15,
-            "type":"Label",
-            "props":{"y":77,"x":560,"width":172,"var":"gameName","text":"Conflux","height":48,"fontSize":40,"color":"#fbfbfb","align":"center"},
-            "nodeParent":1,
-            "label":"Label(gameName)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":81,"x":480,"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":3,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
             "type":"Button",
-            "props":{"y":406,"x":544,"width":200,"var":"editBtn","skin":"comp/button.png","labelSize":40,"label":"edit","height":100},
+            "props":{"y":383,"x":304,"var":"editBtn","stateNum":"3","skin":"main_screen/btn_edit.png","labelSize":40},
             "nodeParent":1,
             "label":"Button(editBtn)",
             "isDirectory":false,
@@ -78,26 +141,6 @@
             "compId":4,
             "child":[
                 ]
-        },
-        {
-            "x":15,
-            "type":"Label",
-            "props":{"y":686,"x":14,"width":84,"var":"version","text":"v0.0.1","height":26,"fontSize":20,"color":"#ffffff","align":"center"},
-            "nodeParent":1,
-            "label":"Label(version)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":598,"x":86,"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":5,
-            "child":[
-                ]
         }],
     "animations":[
         {
@@ -107,5 +150,6 @@
             "id":1,
             "frameRate":24,
             "action":0
-        }]
+        }],
+    "$HIDDEN":false
 }

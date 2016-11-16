@@ -68,6 +68,7 @@ $RECYCLE.BIN/
 
 # custom
 client/bin/res
+client/bin/main_screen
 client/src/ui
 client/laya/styles.xml
 *.fw.png
