@@ -1,7 +1,7 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":1,
+    "selectedBox":16,
     "selecteID":12,
     "props":{"sceneWidth":504,"sceneHeight":704,"sceneColor":"#000000"},
     "nodeParent":-1,
@@ -21,152 +21,150 @@
     "child":[
         {
             "x":15,
-            "type":"Image",
-            "props":{"y":0,"x":0,"var":"bg","skin":"common/card_frame_blue.png","scaleY":0.5,"scaleX":0.5},
+            "type":"Box",
+            "props":{"y":0,"x":0},
             "nodeParent":1,
-            "label":"Image(bg)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":283,"x":114},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":2,
-            "child":[
-                ],
-            "$LOCKED":false
-        },
-        {
-            "x":15,
-            "type":"Image",
-            "props":{"y":5,"x":6,"width":35,"var":"category","skin":"common/card_type_creature.png","scaleY":0.5,"scaleX":0.5,"height":35},
-            "nodeParent":1,
-            "label":"Image(category)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":239,"x":-186},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":3,
-            "child":[
-                ],
-            "$LOCKED":false
-        },
-        {
-            "x":15,
-            "type":"Image",
-            "props":{"y":23.5,"x":11,"var":"picture","scaleY":0.5,"scaleX":0.5},
-            "nodeParent":1,
-            "label":"Image(picture)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":202,"x":-55,"skin":"res/1000001.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":4,
-            "child":[
-                ],
-            "$LOCKED":false
-        },
-        {
-            "x":15,
-            "type":"HBox",
-            "props":{"y":6,"x":213,"var":"costBox","space":2,"scaleY":0.5,"scaleX":0.5,"align":"middle"},
-            "nodeParent":1,
-            "label":"HBox(costBox)",
+            "label":"Box",
             "isOpen":true,
-            "isDirectory":false,
+            "isDirectory":true,
             "isAniNode":true,
-            "hasChild":false,
+            "hasChild":true,
             "frames":[
                 {
                     "type":1,
-                    "props":{},
+                    "props":{"y":0,"x":0},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":7,
+            "compId":16,
             "child":[
-                ],
-            "$LOCKED":false
-        },
-        {
-            "x":15,
-            "type":"Label",
-            "props":{"y":188,"x":122,"var":"name","text":"这是卡牌名字","overflow":"hidden","fontSize":15,"color":"#000000","bold":true,"anchorX":0.5,"align":"center"},
-            "nodeParent":1,
-            "label":"Label(name)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
                 {
-                    "type":1,
-                    "props":{"y":422,"x":81,"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":12,
-            "child":[
-                ],
-            "$LOCKED":false
-        },
-        {
-            "x":15,
-            "type":"Label",
-            "props":{"y":215,"x":26,"wordWrap":true,"width":200,"var":"description","stroke":1,"overflow":"scroll","leading":3,"height":112,"fontSize":15,"color":"#000000","centerX":0,"bold":false},
-            "nodeParent":1,
-            "label":"Label(description)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":0,"x":0,"width":214,"var":"bg","skin":"common/card_frame_blue.png","height":299},
+                    "nodeParent":16,
+                    "label":"Image(bg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "frames":[
+                        {
+                            "type":1,
+                            "props":{"y":283,"x":114},
+                            "frame":0,
+                            "__InPool":false
+                        }],
+                    "compId":2,
+                    "child":[
+                        ],
+                    "$LOCKED":false
+                },
                 {
-                    "type":1,
-                    "props":{"y":551,"x":-147,"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":14,
-            "child":[
-                ],
-            "$LOCKED":false
-        },
-        {
-            "x":15,
-            "type":"Image",
-            "props":{"y":0,"x":0,"visible":false,"var":"back","skin":"common/card_back.png"},
-            "nodeParent":1,
-            "label":"Image(back)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":5,"x":6,"width":15,"var":"category","skin":"common/card_type_creature.png","height":15},
+                    "nodeParent":16,
+                    "label":"Image(category)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "frames":[
+                        {
+                            "type":1,
+                            "props":{"y":239,"x":-186},
+                            "frame":0,
+                            "__InPool":false
+                        }],
+                    "compId":3,
+                    "child":[
+                        ],
+                    "$LOCKED":false
+                },
                 {
-                    "type":1,
-                    "props":{"y":580,"x":-311,"skin":"common/card_back.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":15,
-            "child":[
-                ],
-            "$LOCKED":false,
-            "$HIDDEN":true
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":20.3,"x":9.5,"width":196,"var":"picture","height":139},
+                    "nodeParent":16,
+                    "label":"Image(picture)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "frames":[
+                        {
+                            "type":1,
+                            "props":{"y":202,"x":-55,"skin":"res/1000001.png"},
+                            "frame":0,
+                            "__InPool":false
+                        }],
+                    "compId":4,
+                    "child":[
+                        ],
+                    "$LOCKED":false
+                },
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":159,"x":56,"width":190,"var":"name","text":"这是卡牌名字","overflow":"hidden","height":14,"fontSize":14,"color":"#000000","bold":true,"anchorX":0.5,"align":"center"},
+                    "nodeParent":16,
+                    "label":"Label(name)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "frames":[
+                        {
+                            "type":1,
+                            "props":{"y":422,"x":81,"text":"label"},
+                            "frame":0,
+                            "__InPool":false
+                        }],
+                    "compId":12,
+                    "child":[
+                        ],
+                    "$LOCKED":false
+                },
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":178,"wordWrap":true,"width":188,"var":"description","stroke":1,"overflow":"scroll","leading":3,"height":105,"fontSize":14,"color":"#000000","bold":false},
+                    "nodeParent":16,
+                    "label":"Label(description)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "frames":[
+                        {
+                            "type":1,
+                            "props":{"y":551,"x":-147,"text":"label"},
+                            "frame":0,
+                            "__InPool":false
+                        }],
+                    "compId":14,
+                    "child":[
+                        ],
+                    "$LOCKED":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":0,"x":0,"width":214,"visible":false,"var":"back","skin":"common/card_back.png","height":299},
+                    "nodeParent":16,
+                    "label":"Image(back)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "frames":[
+                        {
+                            "type":1,
+                            "props":{"y":580,"x":-311,"skin":"common/card_back.png"},
+                            "frame":0,
+                            "__InPool":false
+                        }],
+                    "compId":15,
+                    "child":[
+                        ],
+                    "$LOCKED":false,
+                    "$HIDDEN":true
+                }]
         }],
     "animations":[
         {
@@ -177,5 +175,6 @@
             "frameRate":24,
             "action":0
         }],
-    "$LOCKED":false
+    "$LOCKED":false,
+    "$HIDDEN":false
 }

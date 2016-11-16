@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":55,
+    "selecteID":57,
     "props":{"width":1280,"sceneColor":"#4f4d4d","height":720,"hScrollBarSkin":"comp/hscroll.png"},
     "nodeParent":-1,
     "label":"View",
