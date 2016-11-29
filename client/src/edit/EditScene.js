@@ -11,6 +11,7 @@
         EditScene.__super.call(this);
         
         var Conflux = window.Conflux || {};
+        var dataManager = Conflux.dataManager;
 
         // 保存牌库中的卡牌
         this.cardsArray = [];
@@ -60,8 +61,19 @@
             this.deckCardList[this.deckCardList.length] = config;
             this.deckArray[this.deckArray.length] = tempCard;
             this.deck_list.addChild(tempCard);
+
+            tempCard.clickFunc = function(){
+                    if (Conflux.eventDispatcher){
+                        Conflux.eventDispatcher.event(Conflux.EditEvent.deckCardClicked, this.config);
+                    }
+                };
         };
 
+        this.removeCardFromDeck = function(config){
+            
+        }
+
+        // override
         this.onLoad = function(){
             var closeBtnClick = function(){
                 Conflux.sceneManager.enterScene("start");
@@ -76,12 +88,48 @@
                     dump(config);
                     this.addCardToDeck(config);
                 });
+
+                Conflux.eventDispatcher.on(Conflux.EditEvent.deckCardClicked, this, function(config){
+                    DLOG("[EditScene] handle deck card clicked");
+                    dump(config);
+
+                });
             }
         };
 
+        // override
         this.onUnload = function(){
 
         };
+
+        this.saveDeck = function(){
+            dataManager.setCardList(this.deckCardList);
+        };
+
+        this.loadDeck = function(){
+            this.deckCardList = dataManager.getCardList();
+            for (let [index, elem] of this.deckArray.entries()){
+                elem.destroy();
+            }
+            this.deckArray = [];
+
+            var index = 0;
+            var list = this.deckCardList;
+            for (var i in list){
+                var tempCard = new game.card();
+                tempCard.loadConfig(list[i]);
+                tempCard.pos((tempCard.width + 2) * index, 1);
+                this.deck_list.addChild(tempCard);
+                this.deckArray[index] = tempCard;
+                tempCard.clickFunc = function(){
+                    if (Conflux.eventDispatcher){
+                        Conflux.eventDispatcher.event(Conflux.EditEvent.deckCardClicked, this.config);
+                    }
+                };
+                ++index;
+            }
+        };
+
     };
 
     Laya.class(EditScene, "edit.EditScene", ui.edit.editUI);

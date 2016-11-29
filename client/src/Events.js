@@ -11,7 +11,8 @@
 (function(window){
     window.Conflux = window.Conflux || {};
     window.Conflux.EditEvent = {
-        libraryCardClicked: "libraryCardClicked"
+        libraryCardClicked: "libraryCardClicked",
+        deckCardClicked: "deckCardClicked"
     }
 
 })(window);
