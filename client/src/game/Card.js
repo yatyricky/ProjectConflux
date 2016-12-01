@@ -26,12 +26,10 @@
         this.size(this.bg.width, this.bg.height);
 
         this._onPicLoaded = function(res){
-            DLOG("[Card] onPicLoaded: " + res);
             this.picture.skin = res;
         };
 
         this._onSkinLoaded = function(res){
-            DLOG("[Card] onSkinLoaded: " + res);
             this.bg.skin = res;
         };
 
@@ -39,7 +37,6 @@
         this.loadConfig = function(config){
             this.config = config;
             if (config.picture){
-                DLOG("[Card] load picture: " + config.picture);
                 if (Laya.loader.getRes(config.picture)){
                     this._onPicLoaded(config.picture);
                 }
