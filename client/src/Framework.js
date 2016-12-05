@@ -29,6 +29,10 @@
             var gameData = new core.GameData();
             Conflux.gameData = gameData;
             gameData.init();
+
+            var dataManager = new core.DataManager();
+            Conflux.dataManager = dataManager;
+            dataManager.init();
         };
 
         this.run = function(){

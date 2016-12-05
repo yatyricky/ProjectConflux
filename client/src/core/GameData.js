@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * GameData.js
  * 
@@ -7,6 +5,9 @@
  * date: 2016-11-7
  * purpose: 用于存储全局数据的管理类
  */
+
+"use strict";
+
 
 (function(){
     var Conflux = window.Conflux || {}
