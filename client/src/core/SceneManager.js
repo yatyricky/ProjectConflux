@@ -70,7 +70,7 @@
         };
     };
 
-    Laya.class(SceneManager, "core.SceneManager", null);
+    Laya.class(SceneManager, "SceneManager", null);
 })();
 
 

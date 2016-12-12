@@ -106,7 +106,6 @@
         });
 
         this.on(Laya.Event.CLICK, this, function(){
-            DLOG("[Card] clicked");
             if (this.clickFunc && typeof(this.clickFunc) == "function"){
                 this.clickFunc();
             }
@@ -114,7 +113,7 @@
         
     };
 
-    Laya.class(Card, "game.card", ui.share.cardUI);
+    Laya.class(Card, "Card", ui.share.cardUI);
 })();
 
 

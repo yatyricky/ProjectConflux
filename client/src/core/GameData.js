@@ -34,5 +34,5 @@
         }
     };
 
-    Laya.class(GameData, "core.GameData", null);
+    Laya.class(GameData, "GameData", null);
 })();

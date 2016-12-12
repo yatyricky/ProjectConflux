@@ -8,23 +8,29 @@
  * purpose: 列举编辑场景使用到的资源
  */
 
-(function(window){
-    window.Conflux = window.Conflux || {};
-    var Conflux = window.Conflux;
-    Conflux.RES = {};
-    Conflux.RES["StartScene"] = [
+(function(){
+    var conflux = window.Conflux || {};
+
+    //------------------------------------
+    conflux.RES = {};
+    conflux.RES["StartScene"] = [
         "res/atlas/comp.json", 
         "res/atlas/common.json", 
         "res/atlas/res.json"
     ];
 
-    Conflux.RES["EditScene"] = [
+    conflux.RES["EditScene"] = [
         "res/atlas/comp.json", 
         "res/atlas/common.json",
         "res/atlas/res.json", 
         "res/atlas/edit.json"
     ];
 
-    Conflux.CONFIG = {};
-    Conflux.CONFIG.cards = "res/test.json";
-})(window);
+    conflux.RES['MatchScene'] = [
+
+    ];
+
+    //---------------------------------------
+    conflux.CONFIG = {};
+    conflux.CONFIG.cards = "res/test.json";
+})();
