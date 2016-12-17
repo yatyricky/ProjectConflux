@@ -35,7 +35,7 @@
 
             var index = 0;
             for (var i in list){
-                var tempCard = new game.card();
+                var tempCard = new Card();
                 tempCard.loadConfig(list[i]);
                 tempCard.pos((tempCard.width + 2) * index, 1);
                 this.card_list.addChild(tempCard);
@@ -54,7 +54,7 @@
          * @param config，卡牌配置信息
          */
         this.addCardToDeck = function(config){
-            var tempCard = new game.card();
+            var tempCard = new Card();
             tempCard.loadConfig(config);
             DLOG("[EditScene] length = " + this.deckCardList.length);
             tempCard.pos((tempCard.width + 2) * this.deckCardList.length, 1);
@@ -81,7 +81,7 @@
                 ++i;
             }
             this.resortDeckCards();
-        }
+        };
 
         this.resortDeckCards = function(){
             var index = 0;
@@ -90,36 +90,43 @@
                 card.pos((card.width + 2) * index, 1);
                 ++index;
             }
-        }
+        };
+
+        this.closeBtnClick = function(){
+            this.saveDeck();
+            Conflux.sceneManager.enterScene("start");
+        };
+
+        this.libraryCardClickClicked = function(config){
+            DLOG("[EditScene] handle library card clicked");
+            this.addCardToDeck(config);
+        };
+
+        this.deckCardClickListener = function(config){
+            DLOG("[EditScene] handle deck card clicked");
+            this.removeCardFromDeck(config);
+        };
 
         // override
         this.onLoad = function(){
             var self = this;
-            var closeBtnClick = function(){
-                this.saveDeck();
-                Conflux.sceneManager.enterScene("start");
-            };
-            this.closeBtn.clickHandler = laya.utils.Handler.create(this, closeBtnClick, null, false);
+            this.closeBtn.clickHandler = laya.utils.Handler.create(this, this.closeBtnClick, null, false);
 
             this.loadCardList(Conflux.gameData.getCardsConfig());
             this.loadDeck();
 
             if (Conflux.eventDispatcher){
-                Conflux.eventDispatcher.on(Conflux.EditEvent.libraryCardClicked, this, function(config){
-                    DLOG("[EditScene] handle library card clicked");
-                    this.addCardToDeck(config);
-                });
-
-                Conflux.eventDispatcher.on(Conflux.EditEvent.deckCardClicked, this, function(config){
-                    DLOG("[EditScene] handle deck card clicked");
-                    self.removeCardFromDeck(config);
-                });
+                Conflux.eventDispatcher.on(Conflux.EditEvent.libraryCardClicked, this, this.libraryCardClickClicked);
+                Conflux.eventDispatcher.on(Conflux.EditEvent.deckCardClicked, this, this.deckCardClickListener);
             }
         };
 
         // override
         this.onUnload = function(){
-
+            if (Conflux.eventDispatcher){
+                Conflux.eventDispatcher.off(Conflux.EditEvent.libraryCardClicked, this, this.libraryCardClickClicked);
+                Conflux.eventDispatcher.off(Conflux.EditEvent.deckCardClicked, this, this.deckCardClickListener);
+            }
         };
 
         this.saveDeck = function(){
@@ -136,7 +143,7 @@
             var index = 0;
             var list = this.deckCardList;
             for (var config of list){
-                var tempCard = new game.card();
+                var tempCard = new Card();
                 tempCard.loadConfig(config);
                 tempCard.pos((tempCard.width + 2) * index, 1);
                 this.deck_list.addChild(tempCard);
@@ -152,7 +159,7 @@
 
     };
 
-    Laya.class(EditScene, "edit.EditScene", ui.edit.editUI);
-    Laya.imps(EditScene, {"core.SceneInterface": true});
+    Laya.class(EditScene, "EditScene", ui.edit.editUI);
+    Laya.imps(EditScene, {"SceneInterface": true});
 })();
 

@@ -13,6 +13,9 @@
     // 游戏构建版本号，与版本号对应，对应规则为 aa.bb.cc.dd -> aabbccdd。例如：v1.2.3.4 -> 10203040
     window.VERSION_CODE = 1;
 
+    // 用于保存全局对象，如玩家信息、牌库配置等。
+    window.Conflux = window.Conflux || {};
+
     window.debugLevel = {
         debug : 1,
         info : 2,

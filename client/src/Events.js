@@ -8,13 +8,13 @@
 
 'use strict';
 
-(function(window){
-    window.Conflux = window.Conflux || {};
-    window.Conflux.EditEvent = {
+(function(){
+    var conflux = window.Conflux || {};
+    conflux.EditEvent = {
         libraryCardClicked: "libraryCardClicked",
         deckCardClicked: "deckCardClicked"
     }
 
-})(window);
+})();
 
 

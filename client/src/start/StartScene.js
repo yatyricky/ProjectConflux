@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * StartScene.js
  * 
@@ -7,6 +5,8 @@
  * date: 2016-11-2
  * purpose: 开始场景的管理类，封装开始场景 UI 并提供操作的方法。
  */
+
+"use strict";
 
 (function(window){
     var Conflux = window.Conflux || {};
@@ -58,8 +58,8 @@
         };
     };
 
-    Laya.class(StartScene, "start.StartScene", ui.start.startUI);
-    Laya.imps(StartScene, {"core.SceneInterface": true});
+    Laya.class(StartScene, "StartScene", ui.start.startUI);
+    Laya.imps(StartScene, {"SceneInterface": true});
 })(window);
 
 

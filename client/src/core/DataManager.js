@@ -26,5 +26,5 @@
 
     };
 
-    Laya.class(DataManager, "core.DataManager", null);
+    Laya.class(DataManager, "DataManager", null);
 })();

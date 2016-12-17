@@ -9,6 +9,6 @@
  */
 
 (function(){
-    Laya.interface("core.SceneInterface", null);
+    Laya.interface("SceneInterface", null);
 })();
 

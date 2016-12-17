@@ -45,7 +45,11 @@
                 if (this._curScene != null){
                     this._curScene.onUnload();
                     Laya.stage.removeChild(this._curScene);
+                    this._curScene.destroy();
                     this._curScene = null;
+                    if (Conflux.eventDispatcher){
+                        Conflux.eventDispatcher.offAll();
+                    }
                 }
 
                 this.onLoad = function(sceneName){
@@ -66,7 +70,7 @@
         };
     };
 
-    Laya.class(SceneManager, "core.SceneManager", null);
+    Laya.class(SceneManager, "SceneManager", null);
 })();
 
 
